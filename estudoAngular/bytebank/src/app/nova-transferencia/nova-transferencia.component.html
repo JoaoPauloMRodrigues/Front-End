@@ -6,12 +6,12 @@
     <div class="form-field">
       <label class="form-field__label" for="valor">Valor</label>
       <!--usando <[()] => two way data binding > para passar uma variavel!-->
-      <!--usando <[]   => propriety  binding > reflete o valor do compoente no template !-->
+      <!--usando <[]   => propriety  binding > reflete o valor do compoente no template ou transfere para uma propriedade !-->
       <input
         class="form-field__input"
         id="valor"
         name="valor"
-        type="text"
+        type="number"
         [(ngModel)]="valor"
       />
     </div>

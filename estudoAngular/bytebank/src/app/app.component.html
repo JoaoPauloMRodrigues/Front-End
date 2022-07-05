@@ -4,5 +4,5 @@
 ></app-nova-transferencia>
 <!--usando <{'{}'} => interpolacao > impirmir variaveis no meio do html-->
 <!--usando <'?' => if ternario > se transferencia for != de any ele puxar o valor -->
-<p>Valor: {{ transferencia ?.valor }}</p>
-<p>Destino: {{ transferencia ?.destino }}</p>
+<app-extrato [transferencias]="transferencias" ></app-extrato>
+
