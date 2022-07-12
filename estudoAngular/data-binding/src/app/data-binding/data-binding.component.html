@@ -1,1 +1,21 @@
-<p>data-binding works!</p>
+<section class="property-binding">
+
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <p>String renderizada com interpolação {{ url }}</p>
+    <p>tambem consegue resolver expressões  1 + 1 =  {{ 1 + 1 }}</p>
+    <p>retorno de metodo =  {{ getValor() }}</p>
+  </article>
+
+  <article>
+    <h3>Proerty Binding</h3>
+    <!-- interpolação -->
+    <img src="{{ urlImagem }}">
+    <br>
+    <!-- Proerty Binding variavel ou chamada de metodo -->
+    <img [src]="urlImagem">
+
+  </article>
+
+
+</section>
