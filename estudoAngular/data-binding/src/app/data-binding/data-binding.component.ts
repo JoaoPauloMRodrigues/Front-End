@@ -11,6 +11,12 @@ export class DataBindingComponent implements OnInit {
     urlImagem: string = 'https://digital.ihg.com/is/image/ihg/ihg-trip-ideas-lp-home-featured-nyc-400x200';
     valorAtual!: string;
     valorSalvo!: string;
+    nome: any = 'abc';
+    pessoa: any = {
+      nome:'joao kleber',
+      idade: 2000
+    }
+    nomeCurso: string = 'angular';
 
     getValor(){
       return 'metodo'
@@ -26,6 +32,10 @@ export class DataBindingComponent implements OnInit {
 
     salvarValor(valor: string){
         this.valorSalvo = valor;
+    }
+
+    onMudouValor(event: any){
+      console.log(event.novoValor);
     }
 
   constructor() { }

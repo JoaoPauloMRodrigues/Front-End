@@ -6,7 +6,7 @@
     <p>tambem consegue resolver expressões  1 + 1 =  {{ 1 + 1 }}</p>
     <p>retorno de metodo =  {{ getValor() }}</p>
   </article>
-  <hr>
+  <hr> <!-- ################################################################ -->
   <article>
     <h3>Proerty Binding</h3>
     <!-- interpolação -->
@@ -16,7 +16,7 @@
     <img [src]="urlImagem">
 
   </article>
-  <hr>
+  <hr> <!-- ################################################################ -->
   <article>
       <h3>Class e Style Binding</h3>
       <div>
@@ -56,7 +56,7 @@
 
       </div>
   </article>
-  <hr>
+  <hr> <!-- ################################################################ -->
 
   <article>
     <h3>Event binding</h3>
@@ -77,4 +77,80 @@
         <p> valor salvo (aperte enter) : {{ valorSalvo }}</p>
     </div>
   </article>
+  <hr> <!-- ################################################################ -->
+  <section class="two-way-binding container-fluid">
+    <article>
+      <h3>Two-way data biding</h3>
+      <div>
+
+        <label for="">propriedade e evento</label>
+        <div>
+          <input
+            #input
+            type="text"
+            [value]="nome"
+            (input)="nome = input.value"
+          />
+        </div>
+
+        <!-- representacao da entidade -->
+        <label for="">ngMOdel sem two way</label>
+        <div>
+          <input type="text"
+            [ngModel]="nome"
+            (ngModelChange)="nome = $event"
+          />
+        </div>
+
+        <label for="">two way data binding</label>
+        <div>
+          <input type="text"
+            [(ngModel)]="nome"
+          />
+        </div>
+
+
+        <p> vc digitou: {{ nome }}</p>
+
+        <hr> <!-- ################################################################ -->
+
+        <div>
+          <label for="">two way com obj</label>
+          <div>
+            <input type="text"
+             [(ngModel)]="pessoa.nome"
+            />
+            <input type="text"
+              [(ngModel)]="pessoa.idade"
+            />
+
+            <p>meu nome e idade sao {{ pessoa.nome }} - {{ pessoa.idade }}</p>
+          </div>
+
+        </div>
+
+        <hr> <!-- ################################################################ -->
+
+        <section class="input-output-properties">
+
+          <article>
+              <h3>input/output-properties</h3>
+
+              <app-curso [nome]="nomeCurso" ></app-curso>
+
+              <contador
+                [valor]="10"
+                (mudouValor)="onMudouValor($event)"
+              >
+              </contador>
+
+          </article>
+
+        </section>
+
+
+
+      </div>
+    </article>
+  </section>
 </section>
